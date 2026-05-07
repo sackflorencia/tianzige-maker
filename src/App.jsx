@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import SearchBar from './components/SearchBar'
 import CharactersList from './components/CharactersList'
+import GridSelector from './components/GridSelector'
 
 
 function App() {
@@ -17,10 +18,12 @@ function App() {
     newCharacters.splice(index, 1);
     setCharacters(newCharacters);
   }
+  const [selectedGrid, setSelectedGrid] = useState("");
   return (
     <>
       <SearchBar onSearch={onSearch} />
       <CharactersList characters={characters} onDelete={onDelete} />
+      <GridSelector setSelectedGrid={setSelectedGrid} />
     </>
   )
 }
